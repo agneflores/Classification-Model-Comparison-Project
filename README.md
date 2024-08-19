@@ -26,45 +26,45 @@ Both datasets can be found and downloaded here: https://archive.ics.uci.edu/data
 
 #### Bank client data:
 
-1 - age (numeric)
+age (numeric)
 
-2 - job : type of job (categorical: "admin.","unknown","unemployed","management","housemaid","entrepreneur","student","blue-collar","self-employed","retired","technician","services") 
+job : type of job (categorical: "admin.","unknown","unemployed","management","housemaid","entrepreneur","student","blue-collar","self-employed","retired","technician","services") 
 
-3 - marital : marital status (categorical: "married","divorced","single"; note: "divorced" means divorced or widowed)
+marital : marital status (categorical: "married","divorced","single"; note: "divorced" means divorced or widowed)
 
-4 - education (categorical: "unknown","secondary","primary","tertiary")
+education (categorical: "unknown","secondary","primary","tertiary")
 
-5 - default: has credit in default? (binary: "yes","no")
+default: has credit in default? (binary: "yes","no")
 
-6 - balance: average yearly balance, in euros (numeric)
+balance: average yearly balance, in euros (numeric)
 
-7 - housing: has housing loan? (binary: "yes","no")
+housing: has housing loan? (binary: "yes","no")
 
-8 - loan: has personal loan? (binary: "yes","no")
+loan: has personal loan? (binary: "yes","no")
 
 #### Related with the last contact of the current campaign:
 
-9 - contact: contact communication type (categorical: "unknown","telephone","cellular")
+contact: contact communication type (categorical: "unknown","telephone","cellular")
 
-10 - day: last contact day of the month (numeric)
+day: last contact day of the month (numeric)
 
-11 - month: last contact month of year (categorical: "jan", "feb", "mar", ..., "nov", "dec")
+month: last contact month of year (categorical: "jan", "feb", "mar", ..., "nov", "dec")
 
-12 - duration: last contact duration, in seconds (numeric)
+duration: last contact duration, in seconds (numeric)
 
 #### Other attributes:
 
-13 - campaign: number of contacts performed during this campaign and for this client (numeric, includes last contact)
+campaign: number of contacts performed during this campaign and for this client (numeric, includes last contact)
 
-14 - pdays: number of days that passed by after the client was last contacted from a previous campaign (numeric, -1 means client was not previously contacted)
+pdays: number of days that passed by after the client was last contacted from a previous campaign (numeric, -1 means client was not previously contacted)
 
-15 - previous: number of contacts performed before this campaign and for this client (numeric)
+previous: number of contacts performed before this campaign and for this client (numeric)
 
-16 - poutcome: outcome of the previous marketing campaign (categorical: "unknown","other","failure","success")
+poutcome: outcome of the previous marketing campaign (categorical: "unknown","other","failure","success")
 
-#### Output variable (desired target):
+#### Target variable:
 
-17 - y - has the client subscribed a term deposit? (binary: "yes","no")
+y - has the client subscribed a term deposit? (binary: "yes","no")
 
 Missing Attribute Values: None
 
@@ -74,7 +74,62 @@ Missing Attribute Values: None
 
 ## Modeling and Performance
 
+Performance measures overview:
 
+#### Precision:
+
+Definition: Precision measures the proportion of true positive predictions among all positive predictions made by the model. It tells you how many of the predicted positives were actually correct.
+
+Formula: Precision = True Positives / (True Positives + False Positives)
+
+Interpretation: High precision indicates that when the model predicts a positive outcome, it is likely to be correct.
+
+#### Recall:
+
+Definition: Recall, also known as sensitivity or true positive rate, measures the proportion of actual positives that were correctly identified by the model.
+
+Formula: Recall = True Positives / (True Positives + False Negatives)
+
+Interpretation: High recall indicates that the model is good at capturing most of the positive cases.
+
+#### F1-Score:
+
+Definition: The F1-score is the harmonic mean of precision and recall, providing a single metric that balances both concerns. It's useful when you want a balance between precision and recall.
+
+Formula: F1-Score = 2 * (Precision * Recall) / (Precision + Recall)
+
+Interpretation: A high F1-score means the model has a good balance between precision and recall.
+
+#### Support:
+
+Definition: Support is the number of actual occurrences of each class in the dataset. It represents the number of instances for each label.
+
+Interpretation: Support helps understand how much weight each class has in the evaluation of the performance metrics.
+
+#### Accuracy:
+
+Definition: Accuracy measures the proportion of correctly predicted instances (both true positives and true negatives) among the total number of instances.
+
+Formula: Accuracy = (True Positives + True Negatives) / Total Instances
+
+Interpretation: Accuracy gives an overall indication of how often the model is correct, but it can be misleading in the case of imbalanced datasets.
+
+#### Macro Average (Macro Avg):
+
+Definition: Macro average calculates the average of a metric (like precision, recall, or F1-score) across all classes, treating each class equally regardless of its support.
+
+Interpretation: Macro average is useful for understanding how the model performs across all classes, giving equal importance to each class.
+
+#### Weighted Average (Weighted Avg):
+
+Definition: Weighted average calculates the average of a metric across all classes, but it takes into account the support (number of instances) for each class. Larger classes contribute more to the weighted average.
+
+Interpretation: Weighted average provides a more balanced view of the model's performance, especially in imbalanced datasets where some classes have more instances than others.
+
+
+These performance measures together give a comprehensive view of a model's effectiveness, helping to evaluate not only its overall accuracy but also how well it handles different classes, particularly in cases of imbalanced data.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ### K-Nearest Neighbors (n=3)
 <img width="800" alt="image" src="https://github.com/user-attachments/assets/19721cef-2862-4e28-8c4e-3d9d14e53f14">
@@ -96,8 +151,7 @@ After applying SMOTE, the KNN model became more effective at identifying the min
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ### Logistic Regression with balanced class weights adjustments 
-<img width="450" alt="image" src="https://github.com/user-attachments/assets/623fffc7-6aa2-4991-922c-1269015380ac">
-
+<img width="800" alt="image" src="https://github.com/user-attachments/assets/34b4a2ab-7dc9-47fa-9307-61a4d8b2411d">
 
 ### Summary:
 
