@@ -96,7 +96,8 @@ After applying SMOTE, the KNN model became more effective at identifying the min
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ### Logistic Regression with balanced class weights adjustments 
-<img width="800" alt="image" src="https://github.com/user-attachments/assets/401fed01-a73d-4060-86c0-73fa6b1e2688">
+<img width="450" alt="image" src="https://github.com/user-attachments/assets/623fffc7-6aa2-4991-922c-1269015380ac">
+
 
 ### Summary:
 
