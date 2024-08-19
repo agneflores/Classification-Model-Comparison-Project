@@ -1,6 +1,6 @@
 # Classifiers Performance Comparison on Imbalanced Target Data
 
-#### Jupyter Notebook with code, experimentation, future insights:[here](https://github.com/agneflores/Classification-Model-Comparison-Project/blob/main/Model_Comparison_KNN_LR_DT_SVM.ipynb)
+#### Jupyter Notebook with code, experimentation, future insights: [here](https://github.com/agneflores/Classification-Model-Comparison-Project/blob/main/Model_Comparison_KNN_LR_DT_SVM.ipynb)
 
 ## Objective
 
